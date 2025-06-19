@@ -18,3 +18,44 @@
   </script>
 </body>
 </html>
+def generate_workout_plan(fitness_level, age, gender):
+    plan = []
+
+    # Age group logic
+    if age < 20:
+        age_modifier = "youth"
+    elif 20 <= age <= 40:
+        age_modifier = "adult"
+    elif 40 < age <= 60:
+        age_modifier = "mature"
+    else:
+        age_modifier = "senior"
+
+    # Fitness level logic
+    if fitness_level.lower() == "beginner":
+        plan.append("💪 3-day full-body split")
+        plan.append("🚶 20–30 min low-intensity cardio after workouts")
+        if gender.lower() == "female":
+            plan.append("🧘 Add yoga or Pilates 1x/week for flexibility")
+        else:
+            plan.append("🏋️ Basic compound movements (squat, push-up, row)")
+    elif fitness_level.lower() == "intermediate":
+        plan.append("🏋️ 4-day upper/lower body split")
+        plan.append("🏃 2x/week HIIT or cycling")
+        if age_modifier == "mature":
+            plan.append("🧘 Add mobility warmups before lifting")
+    elif fitness_level.lower() == "advanced":
+        plan.append("🔥 5–6 days push/pull/legs or body-part split")
+        plan.append("💥 3x/week intense HIIT or interval training")
+        if gender.lower() == "male":
+            plan.append("📈 Include progressive overload tracking")
+        else:
+            plan.append("🏋️‍♀️ Add glute/leg volume days")
+
+    # Age-based modifiers
+    if age_modifier == "senior":
+        plan.append("⚠️ Focus on low-impact cardio & joint-friendly resistance bands")
+    elif age_modifier == "mature":
+        plan.append("🦴 Prioritize core stability and posture exercises")
+
+    return plan
