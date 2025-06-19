@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Fitness Plan – FitForge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Your Plan is Ready, <span id="username"></span> 💪</h2>
+    <p id="customPlan"></p>
+    <button onclick="location.href='index.html'">Back to Home</button>
+  </div>
+
+  <script>
+    document.getElementById("username").textContent = localStorage.getItem("name");
+    document.getElementById("customPlan").textContent = localStorage.getItem("plan");
+  </script>
+</body>
+</html>
